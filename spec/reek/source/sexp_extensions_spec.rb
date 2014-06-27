@@ -262,20 +262,18 @@ describe SexpExtensions::ModuleNode do
       mod
     end
 
-    describe '#name' do
-      subject { super().name }
-      it { is_expected.to eq(:Fred) }
+    it 'has the correct #name' do
+      expect(subject.name).to eq(:Fred)
     end
 
-    describe '#simple_name' do
-      subject { super().simple_name }
-      it { is_expected.to eq(:Fred) }
+    it 'has the correct #simple_name' do
+      expect(subject.simple_name).to eq(:Fred)
     end
 
-    describe '#text_name' do
-      subject { super().text_name }
-      it { is_expected.to eq('Fred') }
+    it 'has the correct #text_name' do
+      expect(subject.text_name).to eq('Fred')
     end
+
     it 'has a simple full_name' do
       expect(subject.full_name('')).to eq('Fred')
     end
@@ -290,23 +288,22 @@ describe SexpExtensions::ModuleNode do
       mod
     end
 
-    describe '#name' do
-      subject { super().name }
-      it { is_expected.to eq(s(:colon2, s(:const, :Foo), :Bar)) }
+    it 'has the correct #name' do
+      expect(subject.name).to eq(s(:colon2, s(:const, :Foo), :Bar))
     end
 
-    describe '#simple_name' do
-      subject { super().simple_name }
-      it { is_expected.to eq(:Bar) }
+    it 'has the correct #simple_name' do
+      expect(subject.simple_name).to eq(:Bar)
     end
 
-    describe '#text_name' do
-      subject { super().text_name }
-      it { is_expected.to eq('Foo::Bar') }
+    it 'has the correct #text_name' do
+      expect(subject.text_name).to eq('Foo::Bar')
     end
+
     it 'has a simple full_name' do
       expect(subject.full_name('')).to eq('Foo::Bar')
     end
+
     it 'has a fq full_name' do
       expect(subject.full_name('Blimey::O::Reilly')).to eq('Blimey::O::Reilly::Foo::Bar')
     end
