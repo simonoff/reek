@@ -21,7 +21,7 @@ describe ShouldReek do
 
     it 'reports the smells when should_not fails' do
       matcher.matches?(smelly_code)
-      expect(matcher.failure_message_for_should_not).to match('UncommunicativeVariableName')
+      expect(matcher.failure_message_when_negated).to match('UncommunicativeVariableName')
     end
   end
 
@@ -44,7 +44,7 @@ describe ShouldReek do
 
     it 'reports the smells when should_not fails' do
       matcher.matches?(smelly_dir)
-      expect(matcher.failure_message_for_should_not).to match('UncommunicativeVariableName')
+      expect(matcher.failure_message_when_negated).to match('UncommunicativeVariableName')
     end
   end
 
@@ -67,7 +67,7 @@ describe ShouldReek do
 
     it 'reports the smells when should_not fails' do
       matcher.matches?(smelly_file)
-      expect(matcher.failure_message_for_should_not).to match('UncommunicativeVariableName')
+      expect(matcher.failure_message_when_negated).to match('UncommunicativeVariableName')
     end
   end
 end

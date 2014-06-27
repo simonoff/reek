@@ -24,10 +24,10 @@ describe ShouldReekOnlyOf do
         expect(@examiner).to receive(:description).and_return(@source)
       end
       it 'reports the source' do
-        expect(@matcher.failure_message_for_should).to match(@source)
+        expect(@matcher.failure_message).to match(@source)
       end
       it 'reports the expected smell class' do
-        expect(@matcher.failure_message_for_should).to match(@expected_smell_class.to_s)
+        expect(@matcher.failure_message).to match(@expected_smell_class.to_s)
       end
     end
   end
@@ -78,12 +78,12 @@ describe ShouldReekOnlyOf do
       expect(@match).to be_truthy
     end
     it 'reports the expected smell when no match was expected' do
-      expect(@matcher.failure_message_for_should_not).to match(@expected_smell_class.to_s)
+      expect(@matcher.failure_message_when_negated).to match(@expected_smell_class.to_s)
     end
     it 'reports the source when no match was expected' do
       source = 'the_path/to_a/source_file.rb'
       expect(@examiner).to receive(:description).and_return(source)
-      expect(@matcher.failure_message_for_should_not).to match(source)
+      expect(@matcher.failure_message_when_negated).to match(source)
     end
   end
 end

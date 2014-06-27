@@ -38,7 +38,7 @@ describe ShouldReekOf do
 
     it 'reports the smells when should_not fails' do
       expect(@matcher.matches?(@smelly_code)).to be_truthy
-      expect(@matcher.failure_message_for_should_not).to match('UncommunicativeVariableName')
+      expect(@matcher.failure_message_when_negated).to match('UncommunicativeVariableName')
     end
   end
 
