@@ -11,14 +11,14 @@ if test(?f, release_timestamp_file)
     context 'version file' do
       it 'has been updated since the last release' do
         version_time = File.stat('lib/reek.rb').mtime
-        expect(version_time > @release_time).to be_truthy
+        expect(version_time).to be > @release_time
       end
     end
 
     context 'history file' do
       it 'has been updated since the last release' do
         history_time = File.stat('History.txt').mtime
-        expect(history_time > @release_time).to be_truthy
+        expect(history_time).to be > @release_time
       end
     end
   end
